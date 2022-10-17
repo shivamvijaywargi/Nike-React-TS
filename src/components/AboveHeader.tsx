@@ -3,7 +3,7 @@ import React from "react";
 const AboveHeader = () => {
   return (
     <div className="bg-gray-100">
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center p-4 md:px-0">
         <div>
           <a href="#">
             <svg height="24px" width="24px" fill="#111" viewBox="0 0 26 32">

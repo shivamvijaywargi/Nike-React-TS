@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto flex justify-between items-center px-4">
+    <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
       <div>
         <svg
           aria-hidden="true"
@@ -22,22 +22,22 @@ const Navbar = () => {
         </svg>
       </div>
       <div className="hidden md:block md:space-x-3">
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           Men
         </a>
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           Women
         </a>
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           Kids
         </a>
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           Customize
         </a>
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           Sale
         </a>
-        <a href="#" className="hover:border-b-2 border-black pb-3">
+        <a href="#" className="hover:border-b-2 border-black pb-5">
           SNKRS
         </a>
       </div>
@@ -48,7 +48,7 @@ const Navbar = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 cursor-pointer"
         >
           <path
             strokeLinecap="round"
@@ -62,7 +62,7 @@ const Navbar = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 cursor-pointer"
         >
           <path
             strokeLinecap="round"
@@ -76,7 +76,7 @@ const Navbar = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 cursor-pointer"
         >
           <path
             strokeLinecap="round"

@@ -6,7 +6,13 @@ const TwoProductsSideBySide = () => {
       <h2 className="text-xl">The Essentials</h2>
       <div className="grid md:grid-cols-2 gap-4">
         <div className="relative">
-          <video src="/nike-just-do-it.mp4" autoPlay muted={true} loop />
+          <video
+            className="w-full h-full"
+            src="/nike-just-do-it.mp4"
+            autoPlay
+            muted={true}
+            loop
+          />
           <div className="absolute bottom-8 left-4">
             <p className="text-black text-2xl">
               Mood-boosting Essentials in Pretty Pastels
