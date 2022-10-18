@@ -1,8 +1,6 @@
-import React from "react";
-
 const Footer = () => {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-white mt-8 md:mt-0">
       <div className="container mx-auto p-4 md:px-0 md:my-8 md:flex md:justify-between">
         <div className="md:flex md:gap-6">
           <div className="mt-4">

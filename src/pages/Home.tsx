@@ -1,4 +1,3 @@
-import AboveHeader from "../components/AboveHeader";
 import BannerImageSection from "../components/BannerImageSection";
 import Playoffs from "../components/Playoffs";
 import ProductCards from "../components/ProductCards";
