@@ -9,6 +9,15 @@ const BannerImageSection = ({
   bgColor,
   btnTextColor,
   imgUrl,
+}: {
+  para?: string;
+  heading?: string;
+  btnOne?: string;
+  btnTwo?: string;
+  textColor?: string;
+  bgColor?: string;
+  btnTextColor?: string;
+  imgUrl?: string;
 }) => {
   return (
     <section className="md:relative container mx-auto">

@@ -1,7 +1,10 @@
 import { useState } from "react";
+import useProductStore from "../stores/productStore";
 
 const Cart = () => {
   const [notice, setNotice] = useState(true);
+
+  const { products, removeFromCart } = useProductStore();
 
   return (
     <div>
@@ -33,13 +36,49 @@ const Cart = () => {
             </p>
           )}
           <h2 className="text-2xl">Bag</h2>
-          <div className="flex justify-between">
+
+          {products.map((product) => (
+            <div key={product.id} className="flex justify-between">
+              <div className="flex">
+                <img
+                  className="w-36 h-36"
+                  src={product.imgUrl}
+                  alt="Nike Just Do it"
+                />
+
+                <div className="ml-4 space-y-2">
+                  <h3>{product?.name}</h3>
+                  <p className="text-gray-500">{product?.category}</p>
+                  <p className="text-gray-500">
+                    Quantity{" "}
+                    <select name="quantity" id="quantity">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </p>
+                  <button
+                    onClick={() => removeFromCart(product?.id)}
+                    className="text-gray-500 hover:text-black cursor-pointer"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+              <p>₹ {product.price}</p>
+            </div>
+          ))}
+
+          {/* <div className="flex justify-between">
             <div className="flex">
               <img
                 className="w-36 h-36"
                 src="/shoe3.webp"
                 alt="Nike Just Do it"
               />
+              
               <div className="ml-4 space-y-2">
                 <h3>Product Title</h3>
                 <p className="text-gray-500">Product Category</p>
@@ -59,7 +98,7 @@ const Cart = () => {
               </div>
             </div>
             <p>Price</p>
-          </div>
+          </div> */}
 
           <hr />
         </div>

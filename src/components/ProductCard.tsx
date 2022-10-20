@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Card } from "../utils/interfaces";
 
-const ProductCard = ({ card: { name, category, price, imgUrl, id } }: Card) => {
+const ProductCard = ({
+  card: { name, category, price, imgUrl, id },
+}: {
+  card: Card;
+}) => {
   return (
     <Link to={`/product/${id}`}>
       <div className="w-auto inline-block mb-4 cursor-pointer">

@@ -1,12 +1,19 @@
 import { useParams } from "react-router-dom";
+import useProductStore from "../stores/productStore";
 import { cardData } from "../utils/data";
+import { Product } from "../utils/interfaces";
 
 const ProductViewPage = () => {
   const { productId } = useParams();
+  const { addToCart } = useProductStore();
 
   const currentProduct = cardData.find(
     (prod) => prod?.id === Number(productId)
   );
+
+  const handleAddToCart = (product: Product) => {
+    addToCart(product);
+  };
 
   return (
     <div>
@@ -30,6 +37,7 @@ const ProductViewPage = () => {
               <a
                 href="#"
                 className="bg-black/95 hover:bg-black/60 text-white text-center p-4 rounded-full"
+                onClick={() => handleAddToCart(currentProduct as Product)}
               >
                 Add to Bag
               </a>
