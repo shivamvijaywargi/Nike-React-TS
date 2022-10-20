@@ -1,5 +1,5 @@
 import create from "zustand";
-import { combine } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 import { Product } from "../utils/interfaces";
 
 interface ProductsStore {
@@ -8,33 +8,45 @@ interface ProductsStore {
   removeFromCart: (productId: number) => void;
 }
 
-// const useProductStore = create(
-//   combine({ products: [] }, (set) => ({
-//     addToCart: (product: Product) => {
-//       set((state) => ({ products: [...state.products, product] }));
-//     },
-//     removeFromCart: (productId: number) => {
-//       set((state) => ({
-//         products: state.products.filter((product) => productId !== product.id),
-//       }));
-//       // console.log(typeof state);
-//     },
-//   }))
-// );
+// const getLocalStorage = (key) => JSON.parse(localStorage.getItem(key));
+// const setLocalStorage = (key, value) =>
+//   localStorage.setItem(key, JSON.stringify(value));
 
-const useProductStore = create<ProductsStore>((set) => ({
-  // Initial State
-  products: [],
-  addToCart: (product: Product) => {
-    set((state) => ({
-      products: [...state.products, product],
-    }));
-  },
-  removeFromCart: (productId: number) => {
-    set((state) => ({
-      products: state.products.filter((product) => productId !== product.id),
-    }));
-    // console.log(typeof state);
-  },
-}));
+// Without localstorage
+// const useProductStore = create<ProductsStore>((set) => ({
+//   // Initial State
+//   products: [],
+//   addToCart: (product: Product) =>
+//     set((state) => ({ products: [...state.products, product] })),
+
+//   removeFromCart: (productId: number) => {
+//     set((state) => ({
+//       products: state.products.filter((product) => productId !== product.id),
+//     }));
+//     // console.log(typeof state);
+//   },
+// }));
+
+// With local storage - not working as of now
+const useProductStore = create<ProductsStore>()(
+  persist(
+    (set, get) => ({
+      // Initial State
+      products: [],
+      addToCart: (product: Product) =>
+        set({ products: [...get().products, product] }),
+      removeFromCart: (productId: number) => {
+        set({
+          products: get().products.filter(
+            (product) => productId !== product.id
+          ),
+        });
+      },
+    }),
+    {
+      name: "products",
+    }
+  )
+);
+
 export default useProductStore;
