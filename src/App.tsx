@@ -7,11 +7,13 @@ import Contact from "./pages/Contact";
 
 import Home from "./pages/Home";
 import ProductViewPage from "./pages/ProductViewPage";
+import ScrollToTop from "./utils/scrollToTop";
 
 function App() {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         <AboveHeader />
         <Navbar />
         <Routes>
