@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useProductStore from "../stores/productStore";
+import { useState } from 'react';
+import useProductStore from '../stores/productStore';
 
 const Cart = () => {
   const [notice, setNotice] = useState(true);
@@ -13,7 +13,7 @@ const Cart = () => {
           {notice && (
             <p className="bg-gray-100 p-2 text-xs transition duration-300 font-semibold flex justify-between items-center">
               It's taking us a bit longer than usual to get your order to you.
-              Thank you for your patience.{" "}
+              Thank you for your patience.{' '}
               <span
                 className="cursor-pointer ml-4"
                 onClick={() => setNotice(false)}
@@ -37,7 +37,7 @@ const Cart = () => {
           )}
           <h2 className="text-2xl">Bag</h2>
 
-          {products.map((product) => (
+          {/* {products.map((product) => (
             <div key={product.id} className="flex justify-between">
               <div className="flex">
                 <img
@@ -50,7 +50,7 @@ const Cart = () => {
                   <h3>{product?.name}</h3>
                   <p className="text-gray-500">{product?.category}</p>
                   <p className="text-gray-500">
-                    Quantity{" "}
+                    Quantity{' '}
                     <select name="quantity" id="quantity">
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -69,7 +69,45 @@ const Cart = () => {
               </div>
               <p>₹ {product.price}</p>
             </div>
-          ))}
+          ))} */}
+
+          {products.length > 0 ? (
+            products.map((product) => (
+              <div key={product.id} className="flex justify-between">
+                <div className="flex">
+                  <img
+                    className="w-36 h-36"
+                    src={product.imgUrl}
+                    alt="Nike Just Do it"
+                  />
+
+                  <div className="ml-4 space-y-2">
+                    <h3>{product?.name}</h3>
+                    <p className="text-gray-500">{product?.category}</p>
+                    <p className="text-gray-500">
+                      Quantity{' '}
+                      <select name="quantity" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </p>
+                    <button
+                      onClick={() => removeFromCart(product?.id)}
+                      className="text-gray-500 hover:text-black cursor-pointer"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+                <p>₹ {product.price}</p>
+              </div>
+            ))
+          ) : (
+            <p>No items in the bag</p>
+          )}
 
           {/* <div className="flex justify-between">
             <div className="flex">
