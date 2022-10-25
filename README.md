@@ -1,5 +1,9 @@
 # A simple not yet fully functional frontend clone of Nike.in using React + Zustand + React Router + TailwindCSS
 
+### You can checkout the live preview of the website at https://nike-svj.netlify.app/
+
+---
+
 ### Working functionality
 
 - Individual Product page
