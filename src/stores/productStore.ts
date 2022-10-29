@@ -1,6 +1,6 @@
-import create from "zustand";
-import { persist } from "zustand/middleware";
-import { Product } from "../utils/interfaces";
+import create from 'zustand';
+import { persist } from 'zustand/middleware';
+import { Product } from '../interfaces/interfaces';
 
 interface ProductsStore {
   products: Product[];
@@ -44,7 +44,7 @@ const useProductStore = create<ProductsStore>()(
       },
     }),
     {
-      name: "products",
+      name: 'products',
     }
   )
 );

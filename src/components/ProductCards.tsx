@@ -1,6 +1,6 @@
-import { cardData } from "../utils/data";
-import { Card } from "../utils/interfaces";
-import ProductCard from "./ProductCard";
+import { cardData } from '../interfaces/data';
+import { Card } from '../interfaces/interfaces';
+import ProductCard from './ProductCard';
 
 const ProductCards = () => {
   return (

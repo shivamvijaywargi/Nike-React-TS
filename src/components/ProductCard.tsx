@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { Card } from "../utils/interfaces";
+import { Link } from 'react-router-dom';
+import { Card } from '../interfaces/interfaces';
 
 const ProductCard = ({
   card: { name, category, price, imgUrl, id },

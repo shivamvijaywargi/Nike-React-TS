@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
-import useProductStore from "../stores/productStore";
-import { cardData } from "../utils/data";
-import { Product } from "../utils/interfaces";
+import { useParams } from 'react-router-dom';
+import useProductStore from '../stores/productStore';
+import { cardData } from '../interfaces/data';
+import { Product } from '../interfaces/interfaces';
 
 const ProductViewPage = () => {
   const { productId } = useParams();
